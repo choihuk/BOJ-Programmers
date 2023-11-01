@@ -15,37 +15,40 @@
 2. 직접 구현
 
 ```java
-    // 재귀함수
-    private static int gcd(int a, int b){
-        if(b == 0) return a;
-        return gcd(b, a % b);
-    }
-    // 반복문
-    private static int gcd(int a, int b) {
-        int tmp, n;
- 
-        //a에 큰 값을 위치시키기 위한 조건이다.
-        if (a < b) {
-            tmp = a;
-            a = b;
-            b = tmp;
-        }
- 
-        //b가 0 될때까지(a%b), 반복문을 돌게되고, b가 0인 순간의 a를 GCD로 판단하고 리턴한다
-        while (b != 0) {
-            n = a % b;
-            a = b;
-            b = n;
-        }
-        return a;
-    }
+  // 재귀함수
+  private static int gcd(int a, int b){
+      if(b == 0) return a;
+      return gcd(b, a % b);
+  }
+  // 반복문
+  private static int gcd(int a, int b) {
+      int tmp, n;
+
+      //a에 큰 값을 위치시키기 위한 조건이다.
+      if (a < b) {
+          tmp = a;
+          a = b;
+          b = tmp;
+      }
+
+      //b가 0 될때까지(a%b), 반복문을 돌게되고, b가 0인 순간의 a를 GCD로 판단하고 리턴한다
+      while (b != 0) {
+          n = a % b;
+          a = b;
+          b = n;
+      }
+      return a;
+  }
 ```
 
 ## LCM 구하기
 
 ```java
-    public static int lcm(int x, int y) {
-        //0이 아닌 두 수의 곱 / 두 수의 최대공약수
-        return (x * y) / gcd(x, y);
-    }
+  public static int lcm(int x, int y) {
+      //0이 아닌 두 수의 곱 / 두 수의 최대공약수
+      return (x * y) / gcd(x, y);
+  }
 ```
+
+## 출처
+https://rok93.tistory.com/entry/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-GCD-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98 
